@@ -3,6 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
 TOKEN = "8552600125:AAFOMeE0flI_u4ppJMyavxeCucZfyONIqvc"
 
+print("TOKEN:", TOKEN)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     
@@ -28,3 +29,4 @@ app.add_handler(CommandHandler("start", start))
 
 print("Bot aktif...")
 app.run_polling()
+
