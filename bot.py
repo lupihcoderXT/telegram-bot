@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN = "8552600125:AAFOMeE0flI_u4ppJMyavxeCucZfyONIqvc"
+import os
+TOKEN = os.getenv("8552600125:AAFOMeE0flI_u4ppJMyavxeCucZfyONIqvc")
 
 # command /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -34,5 +35,6 @@ app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("link", link))
 app.add_handler(CommandHandler("help", help))
+
 
 app.run_polling()
